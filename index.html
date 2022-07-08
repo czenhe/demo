@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>after hours</title>
+  </head>
+  <body>
+    <div><span>100vh</span></div>
+    <div id="box" class="innerHeightBox"><span>innerHeight</span></div>
+    <style>
+    body{
+      margin:0;
+      font-family:sans-serif;
+    }
+    div{
+      border:gold 10px solid;
+      width:50%;
+      height:100vh;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      box-sizing:border-box;
+      text-align:center;
+    }
+    div.innerHeightBox {
+      height: calc(var(--vh, 1vh) * 100);
+      left: 50%;
+      right: 0;
+    }
+    span{
+      position:relative;
+      top:50%;
+      transform:translateY(-50%);
+    }
+    div:nth-child(even){
+      border-color:tomato;
+    }
+    </style>
+    <script>
+      var vh=window.innerHeight;
+      document.getElementById('box').style.height=vh+'px';
+    </script>
+  </body>
+</html>
